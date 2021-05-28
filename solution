@@ -1,0 +1,16 @@
+function isPrime(range) {
+    let primes = [];
+
+    for (i = 2; i <= range; i++) { //for each number until range is reached
+        for (j = 0; j < primes.length + 1; j++) { //for each prime number already logged
+            if (i % primes[j] == 0) { //if i is divisible 
+                j = primes.length + 1; //pass
+            } else if (j == primes.length) { //if not divisible by any prime
+                primes.push(i); //add it to the primes array
+                j = primes.length + 1; //pass and go check next number i
+            }
+
+        }
+    }
+    console.log(primes);
+}
